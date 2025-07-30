@@ -13,7 +13,7 @@ The backend lives in the `backend/` directory and contains simple agents:
 - **scraper.py** – fetches pages and extracts data
 - **data_normalizer.py** – cleans scraped data
 - **storage_manager.py** – stores items in a SQLite database
-- **main.py** – FastAPI server exposing a `/run_job` endpoint
+- **main.py** – FastAPI server exposing `/run_job`, `/data`, and `/data_csv` endpoints
 
 Install dependencies and run the API (CORS middleware is enabled by default):
 
@@ -34,8 +34,9 @@ npm install
 npm start
 ```
 
-The frontend posts the user's prompt to the backend and displays how many
-items were scraped.
+The frontend posts the user's prompt to the backend and displays a table of
+the scraped data once the job completes. A button is also provided to download
+the results as a CSV file.
 
 ## Usage
 

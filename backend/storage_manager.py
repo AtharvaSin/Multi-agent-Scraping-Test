@@ -24,3 +24,13 @@ def store_items(items: list[dict]) -> None:
         )
     conn.commit()
     conn.close()
+
+
+def fetch_items() -> list[dict]:
+    """Return all scraped items from the database."""
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("SELECT title, price FROM scraped_data")
+    rows = cur.fetchall()
+    conn.close()
+    return [{"title": row[0], "price": row[1]} for row in rows]
