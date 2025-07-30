@@ -6,7 +6,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
+  },
   "scripts": {
-    "start": "npx serve -s public"
+    "build": "npx esbuild src/index.js --bundle --outfile=public/app.js --format=esm --loader:.js=jsx",
+    "start": "npm run build && npx serve -s public"
   }
 }
