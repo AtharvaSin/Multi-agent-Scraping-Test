@@ -15,7 +15,7 @@ The backend lives in the `backend/` directory and contains simple agents:
 - **storage_manager.py** – stores items in a SQLite database
 - **main.py** – FastAPI server exposing a `/run_job` endpoint
 
-Install dependencies and run the API:
+Install dependencies and run the API (CORS middleware is enabled by default):
 
 ```bash
 pip install fastapi uvicorn requests beautifulsoup4
@@ -25,8 +25,8 @@ uvicorn backend.main:app --reload
 ## Frontend
 
 A minimal React interface is provided in the `frontend/` directory.
-It contains `public/index.html` and `src/` React components. Use any
-static server to host it:
+The app is bundled with `esbuild` before serving so the browser can
+load the React modules:
 
 ```bash
 cd frontend

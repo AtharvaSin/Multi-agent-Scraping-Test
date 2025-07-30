@@ -1,10 +1,10 @@
 """Main controller that orchestrates the scraping workflow."""
 
-from nlp_agent import parse_instruction
-from site_analyzer import analyze_site
-from scraper import scrape_pages
-from data_normalizer import normalize_data
-from storage_manager import store_items
+from .nlp_agent import parse_instruction
+from .site_analyzer import analyze_site
+from .scraper import scrape_pages
+from .data_normalizer import normalize_data
+from .storage_manager import store_items
 
 
 def run_job(prompt: str) -> int:

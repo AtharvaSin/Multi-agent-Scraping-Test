@@ -6,7 +6,7 @@ export default function App() {
 
   const handleSubmit = async () => {
     setStatus('Running...');
-    const res = await fetch('/run_job', {
+    const res = await fetch('http://localhost:8000/run_job', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prompt }),
